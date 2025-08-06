@@ -1,0 +1,60 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Google sans code';
+}
+
+nav{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100vw;
+    height: 7%;
+}
+
+nav .text-links {
+    padding: 1rem 0rem 0rem 0rem;
+    display: flex;
+    width: 150vw;
+    justify-content: space-evenly;
+    flex: 0% 0% 65%;
+}
+
+nav .img-links {
+    display: flex;
+    justify-content: flex-end;
+    flex: 0% 0% 35%;
+    margin: 3%;
+}
+.img-links img, .img-links a {
+    width: 7vw;
+    margin: 0 8dvb 0 8%;
+}
+.landing-screen {
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+}
+.title {
+    position: absolute;
+    top: 40%;
+    right: 25%;
+    left: 25%;
+    bottom: 40%;
+}
+
+.title * {
+    text-align: center;
+}
+
+.scroll-message {
+    position: absolute;
+    bottom: 0vh;
+    right: 15%;
+    left: 15%;
+}
+
+.grid {
+    display: grid;
+}
