@@ -9,17 +9,29 @@
 nav{
     display: grid;
     width: 100vw;
-    height: 10vh;
+    height: 10%;
     grid-template-areas: 
     "text image"
     ;
     grid-template-columns: 3fr 1fr;
-    grid-row: 0 / 0;
+    background-color: black;
+    position: fixed;
+    z-index: 1;
+    grid-template-rows: 10vh;
+    font-size: vh;
 }
 
-nav .text-links {
+.text-links {
     grid-area: text;
-    padding-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    white-space: nowrap;
+    justify-content: left;
+    gap: 1rem;
+}
+
+div .text-links a p {
+    text-align: left;
 }
 
 nav .img-links {
@@ -31,6 +43,7 @@ nav .img-links {
     width: 10vw;
     padding-top: 0.3rem;
     justify-content: center;
+    z-index: 2;
     align-content: center;
 }
 .landing-screen {
