@@ -7,29 +7,31 @@
 }
 
 nav{
-    display: flex;
-    flex-wrap: nowrap;
+    display: grid;
     width: 100vw;
-    height: 7%;
+    height: 10vh;
+    grid-template-areas: 
+    "text image"
+    ;
+    grid-template-columns: 3fr 1fr;
+    grid-row: 0 / 0;
 }
 
 nav .text-links {
-    padding: 1rem 0rem 0rem 0rem;
-    display: flex;
-    width: 150vw;
-    justify-content: space-evenly;
-    flex: 0% 0% 65%;
+    grid-area: text;
+    padding-top: 1rem;
 }
 
 nav .img-links {
-    display: flex;
-    justify-content: flex-end;
+    grid-area: image;
     flex: 0% 0% 35%;
     margin: 3%;
 }
 .img-links img, .img-links a {
-    width: 7vw;
-    margin: 0 8dvb 0 8%;
+    width: 10vw;
+    padding-top: 0.3rem;
+    justify-content: center;
+    align-content: center;
 }
 .landing-screen {
     text-align: center;
@@ -38,9 +40,10 @@ nav .img-links {
 }
 .title {
     position: absolute;
+    width: 80vw;
     top: 40%;
-    right: 25%;
-    left: 25%;
+    right: 10%;
+    left: 10%;
     bottom: 40%;
 }
 
@@ -57,4 +60,54 @@ nav .img-links {
 
 .grid {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center;
+    gap: 1rem;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.grid div{
+    width: 100%;
+    text-align: center;
+    background-color: beige;
+}
+.blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    margin: 1rem;
+}
+
+.blog-grid article{
+    background-color: beige;
+    padding: 1.5rem;
+    list-style-position: inside;
+}
+
+.blog-title {
+    margin: 2rem;
+    text-align: center;
+}
+
+hr {
+    border-style: dashed;
+}
+
+.about {
+    margin: 1rem;
+}
+
+.about-title {
+    text-align: center;
+    margin: 2rem;
+}
+
+.about div {
+    text-align: center;
+    background-color: beige;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1.5rem
 }
