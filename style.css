@@ -1,126 +1,177 @@
+/* Utility Classes */
 
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Google sans code';
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Google sans code";
 }
 
-nav{
-    display: grid;
-    width: 100vw;
-    height: 10%;
-    grid-template-areas: 
-    "text image"
-    ;
-    grid-template-columns: 3fr 1fr;
-    background-color: black;
-    position: fixed;
-    z-index: 1;
-    grid-template-rows: 10vh;
-    font-size: vh;
+.nowrap {
+  white-space: nowrap;
+}
+
+/* Variables */
+
+:root {
+  --grid-color: #333;
+  --main-text-color: #fff;
+}
+
+/* Navigation Bar */
+
+nav {
+  display: grid;
+  width: 100vw;
+  height: 8%;
+  grid-template-areas: "text image";
+  grid-template-columns: 3fr 1fr;
+  background-color: black;
+  position: fixed;
+  z-index: 1;
+  grid-template-rows: 8vh;
+  font-size: calc(2.5vw + 1.5vh);
+  overflow: hidden;
 }
 
 .text-links {
-    grid-area: text;
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    white-space: nowrap;
-    justify-content: left;
-    gap: 1rem;
+  grid-area: text;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: space-around;
+  transform: scale(0.9);
 }
 
-div .text-links a p {
-    text-align: left;
+.text-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.text-links a:hover,
+.text-links a:focus {
+  text-decoration: none;
+  color: #999;
 }
 
 nav .img-links {
-    grid-area: image;
-    flex: 0% 0% 35%;
-    margin: 3%;
+  grid-area: image;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100%;
+  flex: 0% 0% 35%;
+  margin: 0;
 }
-.img-links img, .img-links a {
-    width: 10vw;
-    padding-top: 0.3rem;
-    justify-content: center;
-    z-index: 2;
-    align-content: center;
+
+.img-links a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: auto;
 }
+
+.img-links a img {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 6vh;
+}
+
+.github-logo {
+  position: relative;
+  bottom: 7%;
+}
+
+/* Landing Screen */
 .landing-screen {
-    text-align: center;
-    height: 100vh;
-    width: 100vw;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
 }
 .title {
-    position: absolute;
-    width: 80vw;
-    top: 40%;
-    right: 10%;
-    left: 10%;
-    bottom: 40%;
+  position: absolute;
+  width: 80vw;
+  top: 50%;
+  right: 10%;
+  left: 10%;
+  bottom: 50%;
 }
 
 .title * {
-    text-align: center;
+  text-align: center;
 }
 
 .scroll-message {
-    position: absolute;
-    bottom: 0vh;
-    right: 15%;
-    left: 15%;
+  position: absolute;
+  bottom: 0vh;
+  right: 15%;
+  left: 15%;
 }
 
+/* Main Content/Projects */
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    place-items: center;
-    gap: 1rem;
-    margin-top: 5rem;
-    margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  place-items: center;
+  gap: 1rem;
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+  margin: 5rem 1rem 2rem 1rem;
 }
 
-.grid div{
-    width: 100%;
-    text-align: center;
-    background-color: beige;
-}
-.blog-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    place-items: center;
-    margin: 1rem;
+.grid div {
+  width: 100%;
+  text-align: center;
+  background-color: var(--grid-color);
+  color: var(--main-text-color);
 }
 
-.blog-grid article{
-    background-color: beige;
+.grid div article {
     padding: 1.5rem;
     list-style-position: inside;
 }
 
+/* Blog Section */
+.blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  margin: 1rem;
+}
+
+.blog-grid article {
+  background-color: var(--grid-color);
+  padding: 1.5rem;
+  list-style-position: inside;
+  color: var(--main-text-color);
+}
+
 .blog-title {
-    margin: 2rem;
-    text-align: center;
+  margin: 2rem;
+  text-align: center;
 }
 
 hr {
-    border-style: dashed;
+  border-style: dashed;
 }
 
+/* About Section */
+
 .about {
-    margin: 1rem;
+  margin: 1rem;
 }
 
 .about-title {
-    text-align: center;
-    margin: 2rem;
+  text-align: center;
+  margin: 2rem;
 }
 
 .about div {
-    text-align: center;
-    background-color: beige;
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 1.5rem
+  text-align: center;
+  background-color: var(--grid-color);
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1.5rem;
+  color: var(--main-text-color);
 }
