@@ -118,11 +118,24 @@ nav .img-links {
   margin-top: 5rem;
   margin-bottom: 2rem;
   margin: 5rem 1rem 2rem 1rem;
+  grid-template-areas: 
+  "title"
+  "project1 project2"
+  "title"
+  "project3 project4";
+}
+
+.projects-title {
+  grid-area: title;
+  text-align: center;
+  font-size: calc(2.5vw + 1.5vh);
+  margin: 2rem;
 }
 
 .grid div {
   width: 100%;
   height: 100%;
+  padding: 1.5rem;
   text-align: center;
   background-color: var(--grid-color);
   color: var(--main-text-color);
@@ -130,21 +143,33 @@ nav .img-links {
   overflow: hidden;
 }
 
-.grid div .thumbnail {
-    position: absolute;
-    top: calc(50% - 1.5vh);
-    left: calc(25% + 16px);
+.project-1 {
+  grid-area: project1;
+}
+.project-2 {
+  grid-area: project2;
+}
+.project-3 {
+  grid-area: project3;
+}
+.project-4 {
+  grid-area: project4;
+}
 
+
+.grid div .thumbnail {
+  position: absolute;
+  top: calc(50% - 1.5vh);
+  left: 50%;
+  transform: translateX(-50%);
   font-size: calc(1.5vw + 1.5vh);
 }
 
 .grid div article {
-    width: 100%;
-    height: 100%;
-  padding: 1.5rem;
+  width: 100%;
+  height: 100%;
   list-style-position: inside;
 }
-
 
 .grid div article img {
   width: 40px;
@@ -201,23 +226,66 @@ hr {
 .dict-rpg {
   transition: opacity 1s ease-in-out;
   z-index: 2;
+  opacity: 0;
+}
+
+.py-blackjack {
+  transition: opacity 1s ease-in-out;
+  z-index: 2;
+  opacity: 0;
+}
+
+.live-journal {
+  transition: opacity 1s ease-in-out;
+  z-index: 2;
+  opacity: 0;
+}
+
+.web-portfolio {
+  transition: opacity 1s ease-in-out;
+  z-index: 2;
+  opacity: 0;
 }
 
 .thumbnail {
-    transition: opacity 1s ease-in-out;
-    z-index: 1;
-}
-
-.dict-rpg:hover {
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
   opacity: 1;
 }
-.thumbnail:hover {
-    opacity: 0;
-}
 
-.thumbnail:not(:hover){
+.grid div:hover .dict-rpg {
   opacity: 1;
 }
-.dict-rpg:not(:hover) {
+
+.grid div:hover .py-blackjack {
+  opacity: 1;
+}
+.grid div:hover .live-journal {
+  opacity: 1;
+}
+.grid div:hover .web-portfolio {
+  opacity: 1;
+}
+
+.grid div:hover .thumbnail {
   opacity: 0;
 }
+
+.grid div:not(:hover) .thumbnail {
+  opacity: 1;
+}
+
+.grid div:not(:hover) .dict-rpg {
+  opacity: 0;
+}
+
+.grid div:not(:hover) .py-blackjack {
+  opacity: 0;
+}
+.grid div:not(:hover) .live-journal {
+  opacity: 0;
+}
+.grid div:not(:hover) .web-portfolio {
+  opacity: 0;
+}
+
