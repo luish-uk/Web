@@ -22,15 +22,15 @@
 
 nav {
   display: grid;
-  width: 100vw;
+  width: 100%;
   height: 8%;
   grid-template-areas: "text image";
   grid-template-columns: 3fr 1fr;
   background-color: black;
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   grid-template-rows: 8vh;
-  font-size: calc(2.5vw + 1.5vh);
+  font-size: calc(1.5vw + 1vh);
   overflow: hidden;
 }
 
@@ -86,7 +86,7 @@ nav .img-links {
 .landing-screen {
   text-align: center;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
 }
 .title {
   position: absolute;
@@ -111,25 +111,16 @@ nav .img-links {
 /* Main Content/Projects */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  margin-top: 5rem;
-  margin-bottom: 2rem;
-  margin: 5rem 1rem 2rem 1rem;
-  grid-template-areas: 
-  "title"
-  "project1 project2"
-  "title"
-  "project3 project4";
+  margin: 5rem 0.5rem 2rem 0.5rem;
 }
 
 .projects-title {
-  grid-area: title;
+  grid-column: 1 / -1; /* Span across both columns */
   text-align: center;
-  font-size: calc(2.5vw + 1.5vh);
-  margin: 2rem;
+  font-size: calc(1.5vw + 1.5vh);
+  margin: 2rem 0.5rem;
 }
 
 .grid div {
@@ -140,22 +131,7 @@ nav .img-links {
   background-color: var(--grid-color);
   color: var(--main-text-color);
   position: relative;
-  overflow: hidden;
 }
-
-.project-1 {
-  grid-area: project1;
-}
-.project-2 {
-  grid-area: project2;
-}
-.project-3 {
-  grid-area: project3;
-}
-.project-4 {
-  grid-area: project4;
-}
-
 
 .grid div .thumbnail {
   position: absolute;
@@ -163,18 +139,34 @@ nav .img-links {
   left: 50%;
   transform: translateX(-50%);
   font-size: calc(1.5vw + 1.5vh);
+  z-index: 1;
 }
 
 .grid div article {
   width: 100%;
   height: 100%;
   list-style-position: inside;
+  padding: 1rem;
+}
+
+.grid div article p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.grid div article a {
+  margin-top: 0.5rem;
+  display: inline-block;
 }
 
 .grid div article img {
   width: 40px;
   height: 40px;
   display: inline-block;
+}
+
+.projects-link {
+  padding: 4rem 0;
 }
 
 /* Blog Section */
@@ -287,5 +279,46 @@ hr {
 }
 .grid div:not(:hover) .web-portfolio {
   opacity: 0;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 480px) {
+  nav {
+    font-size: calc(3vw + 0.5vh);
+    grid-template-columns: 2fr 1fr;
+  }
+  
+  .text-links {
+    transform: scale(0.8);
+  }
+  
+  .grid {
+    margin: 5rem 0.25rem 2rem 0.25rem;
+    gap: 0.5rem;
+  }
+  
+  .projects-title {
+    font-size: calc(4vw + 1vh);
+    margin: 1rem 0.25rem;
+  }
+  
+  .grid div {
+    padding: 1rem;
+  }
+  
+  .grid div .thumbnail {
+    font-size: calc(3.5vw + 1vh);
+  }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+  .grid {
+    margin: 5rem 0.1rem 2rem 0.1rem;
+  }
+  
+  .text-links {
+    transform: scale(0.7);
+  }
 }
 
